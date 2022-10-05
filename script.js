@@ -25,7 +25,7 @@ async function renderUser() {
             tDiv.id = 'tDiv';
 
             var tspan = document.createElement('span');
-            tspan.innerHTML = '<i class="fa-solid fa-hourglass-half"></i>' + users[repo].updated_at;
+            tspan.innerHTML = '<i class="fa-solid fa-hourglass-half"></i> ' + users[repo].updated_at;
 
             var raDiv = document.createElement('div');
             raDiv.id = 'raDiv';
