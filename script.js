@@ -6,26 +6,47 @@ async function getUser() {
 async function renderUser() {
     let users = await getUser();
     Object.keys(users).forEach(repo => {
-        if (users[repo].homepage !== null) {
-            if (users[repo].archived !== true) {
+        if (users[repo].homepage !== null && users[repo].archived !== true && users[repo].name !== "regularwave.github.io") {
 
-                var div = document.createElement('div');
-                div.id = 'repocard';
+            var div = document.createElement('div');
+            div.id = 'repocard';
 
-                var a = document.createElement('a');
-                a.href = users[repo].homepage;
-                a.innerHTML = users[repo].name;
+            var row1Div = document.createElement('div');
+            row1Div.id = 'row1Div';
 
-                var span = document.createElement('span');
-                span.innerHTML = users[repo].description;
+            var repoNameDiv = document.createElement('div');
+            repoNameDiv.id = 'repoNameDiv';
 
-                document.querySelector('#projects').appendChild(div);
-                div.appendChild(a);
-                div.appendChild(document.createElement('br'));
-                div.appendChild(span);
-            }
+            var a = document.createElement('a');
+            a.href = users[repo].homepage;
+            a.innerHTML = users[repo].name;
+
+            var tDiv = document.createElement('div');
+            tDiv.id = 'tDiv';
+
+            var tspan = document.createElement('span');
+            tspan.innerHTML = '<i class="fa-solid fa-hourglass-half"></i>' + users[repo].updated_at;
+
+            var raDiv = document.createElement('div');
+            raDiv.id = 'raDiv';
+
+            var ra = document.createElement('a');
+            ra.href = users[repo].html_url;
+            ra.innerHTML = '<i class="fa-brands fa-github"></i>';
+
+            var dspan = document.createElement('span');
+            dspan.innerHTML = users[repo].description;
+
+            document.querySelector('#projects').appendChild(div);
+            div.appendChild(row1Div);
+            row1Div.appendChild(repoNameDiv);
+            repoNameDiv.appendChild(a);
+            row1Div.appendChild(raDiv);
+            raDiv.appendChild(ra);
+            row1Div.appendChild(tDiv);
+            tDiv.appendChild(tspan);
+            div.appendChild(dspan);
         }
-
     })
 }
 

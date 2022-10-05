@@ -10,6 +10,12 @@ body {
     background-color: black;
     color: white;
     height: 100vh;
+    background-image: url("./img/jeremy-bishop-1braZySlEKA-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #userAv {
@@ -17,6 +23,8 @@ body {
     height: 50px;
     object-fit: cover;
     border-radius: 50%;
+    border: 1px solid white;
+    margin-right: 1rem;
 }
 
 a {
@@ -41,6 +49,26 @@ a {
     border: 1px;
     border-radius: 5px;
     border-style: solid;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#row1Div {
+    display: flex;
+}
+
+#raDiv {
+    font-size: .8rem;
+    margin-left: auto;
+}
+
+#tDiv {
+    font-size: .8rem;
+    margin-left: .5rem;
+}
+
+footer {
+    font-size: .7rem;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {}
