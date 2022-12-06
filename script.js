@@ -6,7 +6,7 @@ async function getUser() {
 async function renderUser() {
     let users = await getUser();
     Object.keys(users).forEach(repo => {
-        if (users[repo].homepage !== null && users[repo].archived !== true && users[repo].name !== "regularwave.github.io") {
+        if (users[repo].homepage !== null && users[repo].archived !== true && users[repo].name !== "regularwave.github.io" && users[repo].name !== "ns-controller") {
 
             var div = document.createElement('div');
             div.id = 'repocard';
