@@ -25,7 +25,7 @@ async function renderUser() {
             tDiv.id = 'tDiv';
 
             var tspan = document.createElement('span');
-            tspan.innerHTML = '<i class="fa-solid fa-hourglass-half"></i> ' + users[repo].updated_at;
+            tspan.innerHTML = '<i class="fa-solid fa-star"></i>' + users[repo].stargazers_count + ' <i class="fa-solid fa-eye"></i>' + users[repo].watchers_count + ' <i class="fa-solid fa-code-fork"></i>' + users[repo].forks_count + ' <i class="fa-solid fa-hourglass-half"></i> ' + (users[repo].updated_at).split("T")[0];
 
             var raDiv = document.createElement('div');
             raDiv.id = 'raDiv';
